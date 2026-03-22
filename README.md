@@ -2,9 +2,6 @@
 
 > Upload your resume + paste a job description → Get an AI-powered match score, skill gap analysis, and actionable improvements instantly.
 
-![Made with Groq](https://img.shields.io/badge/AI-Groq%20%2B%20Llama%203-orange?style=for-the-badge)
-![No Backend](https://img.shields.io/badge/Backend-None%20Required-6affcb?style=for-the-badge)
-![Deployed on](https://img.shields.io/badge/Deployed%20on-GitHub%20Pages-7c6aff?style=for-the-badge)
 
 ---
 
