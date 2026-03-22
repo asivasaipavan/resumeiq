@@ -9,15 +9,9 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0a0f;
-      --surface: #111118;
-      --surface2: #18181f;
-      --border: rgba(255,255,255,0.07);
-      --accent: #7c6aff;
-      --accent2: #ff6ab0;
-      --accent3: #6affcb;
-      --text: #f0eeff;
-      --muted: #7b7a8e;
+      --bg: #0a0a0f; --surface: #111118; --surface2: #18181f;
+      --border: rgba(255,255,255,0.07); --accent: #7c6aff;
+      --accent2: #ff6ab0; --accent3: #6affcb; --text: #f0eeff; --muted: #7b7a8e;
     }
     body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; overflow-x: hidden; }
     body::before {
@@ -28,9 +22,7 @@
     .blob { position: fixed; border-radius: 50%; filter: blur(120px); opacity: 0.15; pointer-events: none; z-index: 0; }
     .blob-1 { width: 500px; height: 500px; background: var(--accent); top: -150px; left: -100px; }
     .blob-2 { width: 400px; height: 400px; background: var(--accent2); bottom: -100px; right: -80px; }
-
     .container { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
-
     header { text-align: center; padding: 56px 0 40px; }
     .badge {
       display: inline-flex; align-items: center; gap: 8px;
@@ -48,8 +40,6 @@
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 14px;
     }
     .subtitle { color: var(--muted); font-size: 1rem; font-weight: 300; max-width: 460px; margin: 0 auto; line-height: 1.7; }
-
-    /* API KEY SETUP */
     .setup-card {
       background: rgba(124,106,255,0.06); border: 1px solid rgba(124,106,255,0.2);
       border-radius: 16px; padding: 24px; margin-bottom: 20px;
@@ -69,11 +59,9 @@
       cursor: pointer; white-space: nowrap; transition: opacity 0.2s;
     }
     .btn-save:hover { opacity: 0.85; }
-    .key-hint { font-size: 0.8rem; color: var(--muted); margin-top: 8px; }
+    .key-hint { font-size: 0.8rem; color: var(--muted); margin-top: 8px; line-height: 1.6; }
     .key-hint a { color: var(--accent); text-decoration: none; }
     .key-saved { display: none; color: var(--accent3); font-size: 0.85rem; margin-top: 8px; }
-
-    /* MAIN CARDS */
     .card {
       background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
       padding: 28px; margin-bottom: 16px; transition: border-color 0.2s;
@@ -85,10 +73,10 @@
       margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
     }
     .icon { width: 20px; height: 20px; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 11px; }
-
     .upload-zone {
       border: 2px dashed var(--border); border-radius: 12px; padding: 32px 20px;
-      text-align: center; cursor: pointer; transition: all 0.25s; background: rgba(255,255,255,0.01); position: relative;
+      text-align: center; cursor: pointer; transition: all 0.25s;
+      background: rgba(255,255,255,0.01); position: relative;
     }
     .upload-zone:hover, .upload-zone.drag-over { border-color: var(--accent); background: rgba(124,106,255,0.05); }
     .upload-zone input { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
@@ -100,7 +88,6 @@
       background: rgba(106,255,203,0.07); border: 1px solid rgba(106,255,203,0.2);
       border-radius: 8px; padding: 10px 14px; font-size: 0.85rem; color: var(--accent3);
     }
-
     textarea {
       width: 100%; background: rgba(255,255,255,0.02); border: 1px solid var(--border);
       border-radius: 10px; color: var(--text); font-family: 'DM Sans', sans-serif;
@@ -109,24 +96,23 @@
     }
     textarea:focus { border-color: var(--accent); }
     textarea::placeholder { color: var(--muted); }
-
     .btn-analyze {
-      width: 100%; padding: 16px; background: linear-gradient(135deg, var(--accent), var(--accent2));
+      width: 100%; padding: 16px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       border: none; border-radius: 14px; color: white; font-family: 'Syne', sans-serif;
-      font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; cursor: pointer;
-      transition: all 0.25s; position: relative; overflow: hidden;
+      font-size: 1rem; font-weight: 700; letter-spacing: 0.04em; cursor: pointer; transition: all 0.25s;
     }
     .btn-analyze:hover { opacity: 0.9; transform: translateY(-1px); }
     .btn-analyze:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
-
     .loading { display: none; text-align: center; padding: 48px 0; }
     .spinner { width: 44px; height: 44px; border: 2px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px; }
     @keyframes spin { to { transform: rotate(360deg); } }
     .loading-text { color: var(--muted); font-size: 0.9rem; font-weight: 300; }
-
-    .error-msg { background: rgba(255,106,106,0.08); border: 1px solid rgba(255,106,106,0.2); border-radius: 10px; padding: 14px; color: #ff8a8a; font-size: 0.88rem; display: none; margin-top: 14px; }
-
-    /* RESULTS */
+    .error-msg {
+      background: rgba(255,106,106,0.08); border: 1px solid rgba(255,106,106,0.2);
+      border-radius: 10px; padding: 14px; color: #ff8a8a; font-size: 0.88rem;
+      display: none; margin-top: 14px; line-height: 1.6;
+    }
     #results { display: none; }
     .score-section { display: flex; align-items: center; gap: 28px; flex-wrap: wrap; }
     .score-ring-wrap { position: relative; width: 110px; height: 110px; flex-shrink: 0; }
@@ -137,19 +123,16 @@
     .score-info { flex: 1; min-width: 180px; }
     .score-label { font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
     .score-summary { font-size: 0.9rem; line-height: 1.7; color: rgba(240,238,255,0.8); font-weight: 300; }
-
     .tags-wrap { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
     .tag { padding: 4px 11px; border-radius: 100px; font-size: 0.78rem; font-weight: 500; }
     .tag-green { background: rgba(106,255,203,0.1); color: var(--accent3); border: 1px solid rgba(106,255,203,0.2); }
     .tag-red { background: rgba(255,106,106,0.08); color: #ff8a8a; border: 1px solid rgba(255,106,106,0.2); }
-
     .list-items { display: flex; flex-direction: column; gap: 10px; margin-top: 4px; }
     .list-item { display: flex; align-items: flex-start; gap: 10px; font-size: 0.88rem; font-weight: 300; line-height: 1.6; color: rgba(240,238,255,0.85); }
     .dot { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; flex-shrink: 0; margin-top: 2px; }
     .dot-green { background: rgba(106,255,203,0.12); color: var(--accent3); }
     .dot-amber { background: rgba(255,217,106,0.12); color: #ffd96a; }
     .dot-blue { background: rgba(106,168,255,0.12); color: #6aa8ff; }
-
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
     @media(max-width:580px){ .grid-2 { grid-template-columns: 1fr; } }
   </style>
@@ -157,26 +140,26 @@
 <body>
 <div class="blob blob-1"></div>
 <div class="blob blob-2"></div>
-
 <div class="container">
   <header>
-    <div class="badge">AI Powered · 100% Free</div>
+    <div class="badge">Powered by Groq · Free</div>
     <h1>ResumeIQ</h1>
-    <p class="subtitle">Paste your Gemini API key once, upload your resume & job description — get an instant AI match score.</p>
+    <p class="subtitle">Upload your resume & paste a job description — get an instant AI match score with actionable improvements.</p>
   </header>
 
-  <!-- API Key Setup -->
   <div class="setup-card">
-    <div class="setup-title">🔑 Your Gemini API Key</div>
+    <div class="setup-title">🔑 Groq API Key</div>
     <div class="key-row">
-      <input type="password" class="key-input" id="apiKeyInput" placeholder="Paste your Gemini API key here (AIza...)"/>
+      <input type="password" class="key-input" id="apiKeyInput" placeholder="Paste your Groq API key here (gsk_...)"/>
       <button class="btn-save" onclick="saveKey()">Save</button>
     </div>
-    <div class="key-hint">Free key at <a href="https://aistudio.google.com/app/apikey" target="_blank">aistudio.google.com</a> · Stored only in your browser, never sent anywhere else.</div>
+    <div class="key-hint">
+      Get your free key at <a href="https://console.groq.com/keys" target="_blank">console.groq.com/keys</a> — sign up with Google, instant & free (30 req/day).<br/>
+      Key is saved only in your browser, never sent anywhere else.
+    </div>
     <div class="key-saved" id="keySaved">✅ Key saved! You're ready to analyze.</div>
   </div>
 
-  <!-- Resume Upload -->
   <div class="card">
     <div class="card-title"><span class="icon" style="background:rgba(106,255,203,0.1)">📄</span>Your Resume</div>
     <div class="upload-zone" id="uploadZone">
@@ -188,7 +171,6 @@
     <div class="file-ok" id="fileOk">✅ <span id="fileName"></span></div>
   </div>
 
-  <!-- Job Description -->
   <div class="card">
     <div class="card-title"><span class="icon" style="background:rgba(124,106,255,0.12)">💼</span>Job Description</div>
     <textarea id="jobDesc" placeholder="Paste the full job description here — requirements, responsibilities, qualifications..."></textarea>
@@ -199,10 +181,9 @@
 
   <div class="loading" id="loading">
     <div class="spinner"></div>
-    <div class="loading-text">Analyzing with Gemini AI...</div>
+    <div class="loading-text">Analyzing with Groq AI...</div>
   </div>
 
-  <!-- Results -->
   <div id="results">
     <div class="card" style="margin-top:24px;">
       <div class="card-title"><span class="icon" style="background:rgba(124,106,255,0.12)">🎯</span>Match Score</div>
@@ -220,7 +201,6 @@
         </div>
       </div>
     </div>
-
     <div class="grid-2">
       <div class="card">
         <div class="card-title"><span class="icon" style="background:rgba(106,255,203,0.1)">✓</span>Matching Skills</div>
@@ -231,7 +211,6 @@
         <div class="tags-wrap" id="missingSkills"></div>
       </div>
     </div>
-
     <div class="card">
       <div class="card-title"><span class="icon" style="background:rgba(106,255,203,0.1)">💪</span>Strengths</div>
       <div class="list-items" id="strengths"></div>
@@ -248,12 +227,10 @@
 </div>
 
 <script>
-  // PDF.js worker
   pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-  // Load saved key
   window.onload = () => {
-    const saved = localStorage.getItem('gemini_key');
+    const saved = localStorage.getItem('groq_key');
     if (saved) {
       document.getElementById('apiKeyInput').value = saved;
       document.getElementById('keySaved').style.display = 'block';
@@ -263,17 +240,17 @@
   function saveKey() {
     const key = document.getElementById('apiKeyInput').value.trim();
     if (!key) { alert('Please enter your API key.'); return; }
-    localStorage.setItem('gemini_key', key);
+    localStorage.setItem('groq_key', key);
     document.getElementById('keySaved').style.display = 'block';
   }
 
-  // Drag & Drop
   const zone = document.getElementById('uploadZone');
   const fileInput = document.getElementById('resumeFile');
   zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
   zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
   zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('drag-over'); if (e.dataTransfer.files[0]) { fileInput.files = e.dataTransfer.files; showFile(); } });
   fileInput.addEventListener('change', showFile);
+
   function showFile() {
     if (fileInput.files[0]) {
       document.getElementById('fileName').textContent = fileInput.files[0].name;
@@ -294,13 +271,13 @@
   }
 
   async function analyze() {
-    const apiKey = localStorage.getItem('gemini_key') || document.getElementById('apiKeyInput').value.trim();
+    const apiKey = localStorage.getItem('groq_key') || document.getElementById('apiKeyInput').value.trim();
     const file = fileInput.files[0];
     const jd = document.getElementById('jobDesc').value.trim();
     const errEl = document.getElementById('errorMsg');
     errEl.style.display = 'none';
 
-    if (!apiKey) { showError('Please enter and save your Gemini API key first.'); return; }
+    if (!apiKey) { showError('Please enter and save your Groq API key first. Get one free at console.groq.com/keys'); return; }
     if (!file) { showError('Please upload your resume PDF.'); return; }
     if (!jd) { showError('Please paste a job description.'); return; }
 
@@ -312,7 +289,8 @@
       const resumeText = await extractTextFromPDF(file);
       if (!resumeText) throw new Error('Could not read text from your PDF. Make sure it is not a scanned image.');
 
-      const prompt = `You are an expert ATS resume coach. Analyze the resume against the job description and return ONLY a valid JSON object with no markdown, no backticks, no extra text:
+      const prompt = `You are an expert ATS resume coach. Analyze the resume against the job description.
+Return ONLY a valid JSON object — no markdown, no backticks, no explanation, just raw JSON:
 
 {
   "match_score": <integer 0-100>,
@@ -330,22 +308,24 @@ ${resumeText}
 JOB DESCRIPTION:
 ${jd}`;
 
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-        }
-      );
+      const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${apiKey}` },
+        body: JSON.stringify({
+          model: 'llama-3.3-70b-versatile',
+          messages: [{ role: 'user', content: prompt }],
+          temperature: 0.3,
+          max_tokens: 1500
+        })
+      });
 
       if (!res.ok) {
         const e = await res.json();
-        throw new Error(e.error?.message || 'Gemini API error. Check your API key.');
+        throw new Error(e.error?.message || 'Groq API error. Please check your API key.');
       }
 
       const data = await res.json();
-      let raw = data.candidates[0].content.parts[0].text.trim();
+      let raw = data.choices[0].message.content.trim();
       if (raw.startsWith('```')) { raw = raw.split('```')[1]; if (raw.startsWith('json')) raw = raw.slice(4); }
       const result = JSON.parse(raw.trim());
       renderResults(result);
@@ -374,13 +354,11 @@ ${jd}`;
     document.getElementById('scoreNum').textContent = score + '%';
     document.getElementById('scoreNum').style.color = color;
     document.getElementById('scoreSummary').textContent = data.summary;
-
-    document.getElementById('matchingSkills').innerHTML = (data.matching_skills || []).map(s => `<span class="tag tag-green">${s}</span>`).join('') || '<span class="tag tag-red">None found</span>';
-    document.getElementById('missingSkills').innerHTML = (data.missing_skills || []).map(s => `<span class="tag tag-red">${s}</span>`).join('') || '<span class="tag tag-green">None missing!</span>';
-    document.getElementById('strengths').innerHTML = (data.strengths || []).map(s => `<div class="list-item"><span class="dot dot-green">✓</span>${s}</div>`).join('');
-    document.getElementById('improvements').innerHTML = (data.improvements || []).map(s => `<div class="list-item"><span class="dot dot-amber">↑</span>${s}</div>`).join('');
-    document.getElementById('atsTips').innerHTML = (data.ats_tips || []).map(s => `<div class="list-item"><span class="dot dot-blue">i</span>${s}</div>`).join('');
-
+    document.getElementById('matchingSkills').innerHTML = (data.matching_skills||[]).map(s=>`<span class="tag tag-green">${s}</span>`).join('')||'<span class="tag tag-red">None found</span>';
+    document.getElementById('missingSkills').innerHTML = (data.missing_skills||[]).map(s=>`<span class="tag tag-red">${s}</span>`).join('')||'<span class="tag tag-green">None missing!</span>';
+    document.getElementById('strengths').innerHTML = (data.strengths||[]).map(s=>`<div class="list-item"><span class="dot dot-green">✓</span>${s}</div>`).join('');
+    document.getElementById('improvements').innerHTML = (data.improvements||[]).map(s=>`<div class="list-item"><span class="dot dot-amber">↑</span>${s}</div>`).join('');
+    document.getElementById('atsTips').innerHTML = (data.ats_tips||[]).map(s=>`<div class="list-item"><span class="dot dot-blue">i</span>${s}</div>`).join('');
     document.getElementById('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
