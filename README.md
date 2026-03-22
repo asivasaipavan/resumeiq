@@ -97,7 +97,7 @@ npx serve .
 
 ## 📸 Screenshot
 
-![ResumeIQ Screenshot](screenshot.png)
+![ResumeIQ Screenshot](Screenshot.png)
 > *(Add a screenshot of your live app here for extra impact)*
 
 ---
