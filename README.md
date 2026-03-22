@@ -10,7 +10,7 @@
 
 ## 🔴 Live Demo
 
-👉 **[Try it here](https://YOUR_USERNAME.github.io/resumeiq)**
+👉 **[Try it here](https://asivasaipavan.github.io/resumeiq)**
 
 ---
 
@@ -41,7 +41,7 @@
 
 ## 🚀 How to Use
 
-1. Open the [live app](https://YOUR_USERNAME.github.io/resumeiq)
+1. Open the [live app](https://asivasaipavan.github.io/resumeiq)
 2. Get a **free Groq API key** at [console.groq.com/keys](https://console.groq.com/keys)
 3. Paste your key and click **Save**
 4. Upload your **resume as a PDF**
@@ -79,7 +79,7 @@ No dependencies to install. No build step. No server. Just one HTML file.
 No installation needed! Just clone and open:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/resumeiq.git
+git clone https://github.com/asivasaipavan/resumeiq.git
 cd resumeiq
 # Open index.html in your browser
 ```
@@ -92,16 +92,16 @@ npx serve .
 
 ---
 
-## 📝 Resume Bullet Point (for your own resume 😄)
+## 📝 Resume Bullet Point
 
-> *Built and deployed a full-stack AI Resume Analyzer using Groq's Llama 3.3 API and PDF.js — analyzes resume-job fit with LLM, providing ATS match score, skill gap detection, and improvement suggestions. Deployed on GitHub Pages with zero backend.*
+> *Built and deployed an AI Resume Analyzer using Groq's Llama 3.3 API and PDF.js — analyzes resume-job fit with LLM, providing ATS match score, skill gap detection, and improvement suggestions. Deployed on GitHub Pages with zero backend.*
 
 ---
 
 ## 📸 Screenshot
 
 ![ResumeIQ Screenshot](screenshot.png)
-> *(Add a screenshot of your app here for extra impact on GitHub)*
+> *(Add a screenshot of your live app here for extra impact)*
 
 ---
 
@@ -113,4 +113,4 @@ MIT License — free to use, fork, and build on.
 
 ## 🙋 Author
 
-Built by **YOUR_NAME** · [GitHub](https://github.com/YOUR_USERNAME) · [LinkedIn](https://linkedin.com/in/YOUR_PROFILE)
+Built by **Siva Sai Pavan** · [GitHub](https://github.com/asivasaipavan) · [LinkedIn](https://www.linkedin.com/in/sivasaipavan)
